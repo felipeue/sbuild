@@ -1,0 +1,85 @@
+{% extends 'base_concierge.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="col-lg-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Últimos registros realizados
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nombre visita</th>
+                        <th>Rut</th>
+                        <th>Fecha - Hora</th>
+                        <th>Residente</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for record in records%}
+                        <tr>
+                            <th>{{ record.name }}</th>
+                            <th>{{ record.rut }}</th>
+                            <th>{{ record.date }}</th>
+                            <th>{{ record.resident }}</th>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer">
+           Últimos 10 registros realizados. 
+        </div>
+    </div>    
+</div>
+<div class="col-lg-6">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            Estado de gastos comunes.
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+    
+
+        </div>
+        <div class="panel-footer">
+            Revisa el registro financiero del edificio.
+        </div>
+    </div>    
+</div>
+<div class="col-lg-6">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Últmas publicaciones de vecinos.
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+	          
+
+        </div>
+        <div class="panel-footer">
+            Realiza una publicación en el panel.
+        </div>
+    </div>    
+</div>
+<div class="col-lg-6">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            Fechas disponibles de espacios compartidos
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+              
+
+        </div>
+        <div class="panel-footer">
+           
+        </div>
+    </div>    
+</div>
+{% endblock %}

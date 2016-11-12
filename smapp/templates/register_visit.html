@@ -1,0 +1,44 @@
+{% extends 'base_concierge.html' %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="col-lg-6">
+    
+        
+        <!-- /.panel-heading -->
+        
+        <form name="myForm" id="user_form" method="post" action="/register_visit/" enctype="multipart/form-data" class="form-horizontal" onsubmit="return validateForm()">
+        {% csrf_token %}
+                <div class="form-group">
+                <label>Nombre completo</label>
+                {{ visit_form.name|add_class:"form-control"}}
+                {{ visit_form.name.errors }}
+                 </div>
+                 <div class="form-group">
+                <label>Rut</label>
+                {{ visit_form.rut|add_class:"form-control"}}
+                {{ visit_form.rut.errors }}
+                </div>
+                <div class="form-group">
+                <label>Recibido</label>
+                    {{ visit_form.received|add_class:"checkbox-inline"}}
+                {{ visit_form.received.errors }}
+                </div>
+                <div class="form-group">
+                <label>Residente</label>
+                {{ visit_form.resident|add_class:"form-control"}}
+                {{ visit_form.resident.errors }}
+                </div>
+                <div class="form-group">
+                <label>Comentario o nota</label>
+                {{ visit_form.note|add_class:"form-control"}}
+                {{ visit_form.note.errors }}
+                </div>
+                <button type="submit" class="btn green">Registrar</button>
+         </form>
+       
+      
+</div>
+
+{% endblock %}
