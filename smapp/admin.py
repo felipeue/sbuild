@@ -5,5 +5,7 @@ from smapp.models import *
 
 admin.site.register(Apartment)
 admin.site.register(Visit)
-admin.site.register(UserSM)
+admin.site.register(Consierge)
+admin.site.register(Resident)
+admin.site.register(Owner)
 admin.site.register(Building)

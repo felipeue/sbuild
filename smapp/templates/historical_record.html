@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Listado de registros de visitas
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -17,7 +17,8 @@
                                         <th>Rut</th>
                                         <th>Fecha | Hora</th>
                                         <th>Residente</th>
-
+                                        <th>Atendido</th>
+                                        <th>Comentario</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -27,6 +28,12 @@
                                             <td>{{ record.rut }}</td>
                                             <td>{{ record.date }}</td>
                                             <td>{{ record.resident }}</td>
+                                            {% if record.received == True %}
+                                                <td><i class="fa fa-check fa-fw"></i>Si</td>
+                                            {% else %}
+                                                <td><i class="fa fa-times  fa-fw"></i>No</td>
+                                            {% endif %}
+                                            <td>{{ record.note }}</td>
                                         </tr>
                                     {% endfor %}
 

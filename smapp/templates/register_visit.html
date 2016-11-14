@@ -17,12 +17,12 @@
                  </div>
                  <div class="form-group">
                 <label>Rut</label>
-                {{ visit_form.rut|add_class:"form-control"}}
+                {% render_field visit_form.rut oninput="checkRut(this)" class="form-control" %}
                 {{ visit_form.rut.errors }}
                 </div>
                 <div class="form-group">
                 <label>Recibido</label>
-                    {{ visit_form.received|add_class:"checkbox-inline"}}
+                {{ visit_form.received|add_class:"checkbox-inline" }}
                 {{ visit_form.received.errors }}
                 </div>
                 <div class="form-group">
@@ -40,5 +40,5 @@
        
       
 </div>
-
+<script src="{% static "validators/rut.js" %}"></script>
 {% endblock %}

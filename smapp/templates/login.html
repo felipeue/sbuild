@@ -46,7 +46,7 @@
                         {% csrf_token %}
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                    <input class="form-control" placeholder="RUT" name="username" type="text" autofocus oninput="checkRut(this)">
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Contraseña" name="password" type="password" value="">
@@ -74,7 +74,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{% static "dashboard/dist/js/sb-admin-2.js" %}"></script>
-
+    <script src="{% static "validators/rut.js" %}"></script>
 </body>
 
 </html>

@@ -5,10 +5,20 @@ from datetime import datetime
 
 
 # Create your models here.
+class Owner(models.Model):
+    userOrigin = models.OneToOneField(User)
+    rut = models.CharField(max_length=12)
+    phone = models.CharField(max_length=20)
+
+    def __unicode__(self):
+        return unicode(self.id)
+
+
 class Building(models.Model):
     name = models.CharField(max_length=40)
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
+    owner = models.ForeignKey(Owner)
 
     def __unicode__(self):
         return unicode(self.name)
@@ -23,24 +33,21 @@ class Apartment(models.Model):
         return unicode(self.id)
 
 
-class UserSM(models.Model):
-    OWNER = 'O'
-    CONCIERGE = 'C'
-    RESIDENT = 'R'
-    USER_TYPE_CHOICES = (
-        (OWNER, 'Owner'),
-        (CONCIERGE, 'Concierge'),
-        (RESIDENT, 'Resident'),
-    )
+class Resident(models.Model):
     userOrigin = models.OneToOneField(User)
-    apartment = models.ForeignKey(Apartment, blank=True, null=True)
-    building = models.ForeignKey(Building, blank=True, null=True)
-    rut = models.CharField(max_length=10)
+    rut = models.CharField(max_length=12)
     phone = models.CharField(max_length=20)
-    user_type = models.CharField(
-        max_length=1,
-        choices=USER_TYPE_CHOICES,
-    )
+    apartment = models.ForeignKey(Apartment)
+
+    def __unicode__(self):
+        return self.userOrigin.username
+
+
+class Consierge(models.Model):
+    userOrigin = models.OneToOneField(User)
+    rut = models.CharField(max_length=12)
+    phone = models.CharField(max_length=20)
+    building = models.ForeignKey(Building)
 
     def __unicode__(self):
         return self.userOrigin.username
@@ -48,9 +55,9 @@ class UserSM(models.Model):
 
 class Visit(models.Model):
     name = models.CharField(max_length=60)
-    rut = models.CharField(max_length=10)
+    rut = models.CharField(max_length=12)
     date = models.DateTimeField(default=datetime.now)
-    resident = models.ForeignKey(UserSM, limit_choices_to={'user_type': 'R'})
+    resident = models.ForeignKey(Resident)
     note = models.TextField(max_length=200)
     received = models.BooleanField(default=True)
 
@@ -87,4 +94,25 @@ class Resident(models.Model):
     def __unicode__(self):
         return self.userOrigin.username
 
+class UserSM(models.Model):
+    OWNER = 'O'
+    CONCIERGE = 'C'
+    RESIDENT = 'R'
+    USER_TYPE_CHOICES = (
+        (OWNER, 'Owner'),
+        (CONCIERGE, 'Concierge'),
+        (RESIDENT, 'Resident'),
+    )
+    userOrigin = models.OneToOneField(User)
+    apartment = models.ForeignKey(Apartment, blank=True, null=True)
+    building = models.ForeignKey(Building, blank=True, null=True)
+    rut = models.CharField(max_length=10)
+    phone = models.CharField(max_length=20)
+    user_type = models.CharField(
+        max_length=1,
+        choices=USER_TYPE_CHOICES,
+    )
+
+    def __unicode__(self):
+        return self.userOrigin.username
 """
