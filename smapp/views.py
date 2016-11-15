@@ -3,7 +3,7 @@ from smapp.models import *
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from smapp.forms import VisitForm
+from smapp.forms import VisitForm, PublicationForm
 from django.core.exceptions import ObjectDoesNotExist
 
 
@@ -66,6 +66,29 @@ def user_logout(request):
     return HttpResponseRedirect('/')
 
 
+@login_required
+def publish(request):
+    current = request.user
+    try:
+        resident = Resident.objects.get(rut=current.username)
+        if resident:
+            if request.method == 'POST':
+                publication_form = PublicationForm(data=request.POST)
+                if publication_form.is_valid():
+                    publication = publication_form.save(commit=False)
+                    publication.resident = resident
+                    publication.save()
+                    print publication_form.errors
+                    return HttpResponseRedirect('/dashboard/')
+            else:
+                publication_form = PublicationForm()
+            return render(request, 'publish.html', {'publication_form': publication_form})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
 def login_concierge(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -109,6 +132,7 @@ def register_visit(request):
                     visit = visit_form.save(commit=False)
                     visit.save()
                     print visit_form.errors
+                    return HttpResponseRedirect('/historical_record/')
             else:
                 visit_form = VisitForm()
             return render(request, 'register_visit.html', {'visit_form': visit_form})
@@ -130,3 +154,6 @@ def historical_record(request):
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
         return render_to_response('login_error.html', {})
+
+
+

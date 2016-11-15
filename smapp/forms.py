@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django import forms
 from smapp.models import *
 import sys
@@ -52,6 +53,7 @@ def valida(rut):
 
 
 class VisitForm(forms.ModelForm):
+
     name = forms.CharField(label='Nombre completo',
                            min_length=5,
                            widget=forms.TextInput,
@@ -72,3 +74,12 @@ class VisitForm(forms.ModelForm):
     class Meta:
         model = Visit
         fields = ('name', 'rut', 'resident', 'note', 'received')
+
+
+class PublicationForm(forms.ModelForm):
+    title = forms.CharField(label='Titulo', max_length=100)
+    message = forms.TextInput()
+
+    class Meta:
+        model = Publication
+        fields = ('title', 'message')

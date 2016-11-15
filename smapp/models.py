@@ -65,7 +65,15 @@ class Visit(models.Model):
         return unicode(self.id)
 
 
+class Publication(models.Model):
+    resident = models.ForeignKey(Resident)
+    title = models.CharField(max_length=100)
+    date = models.DateField(default=datetime.now)
+    hour = models.TimeField(default=datetime.now)
+    message = models.TextField(max_length=1000)
 
+    def __unicode__(self):
+        return unicode(self.id)
 """
 class Owner(models.Model):
     rut = models.CharField(max_length=10)
