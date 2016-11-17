@@ -39,7 +39,10 @@
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">{{ publication.title }}</h4>
                                             <p><small class="text-muted">
-                                                <i class="fa fa-clock-o"></i> {{ publication.date }} {{ publication.hour }}</small>
+                                                <i class="fa fa-clock-o"></i>
+                                                {{ publication.date }} {{ publication.hour }} <br>
+                                                Publicado por {{ publication.resident.userOrigin.first_name }} {{ publication.resident.userOrigin.last_name }}
+                                            </small>
                                             </p>
                                         </div>
                                         <div class="timeline-body">

@@ -37,8 +37,9 @@ def dashboard(request):
         resident = Resident.objects.get(rut=current.username)
         if resident:
             r = Resident.objects.filter(userOrigin=current)
-            records = Visit.objects.filter(resident=r).order_by('id')[:5]
-            return render(request, 'index_dashboard.html', {'records': records})
+            publications = Publication.objects.order_by('-id')[:5]
+            records = Visit.objects.filter(resident=r).order_by('-id')[:5]
+            return render(request, 'index_dashboard.html', {'records': records, 'publications': publications})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -88,7 +89,7 @@ def publications_wall(request):
     try:
         resident = Resident.objects.get(rut=current.username)
         if resident:
-            publications = Publication.objects.order_by('id').all()
+            publications = Publication.objects.order_by('-id').all()
             return render(request, 'publications_wall.html', {'publications': publications})
         else:
             render_to_response('login_error.html', {})

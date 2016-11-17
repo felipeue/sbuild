@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8afd11fb-1509-4357-a489-0da052629df1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smapp/templates/publications_wall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/forms.py" afterPath="$PROJECT_DIR$/smapp/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/models.py" afterPath="$PROJECT_DIR$/smapp/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/base.html" afterPath="$PROJECT_DIR$/smapp/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/publish.html" afterPath="$PROJECT_DIR$/smapp/templates/publish.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/urls.py" afterPath="$PROJECT_DIR$/smapp/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/index_dashboard.html" afterPath="$PROJECT_DIR$/smapp/templates/index_dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/publications_wall.html" afterPath="$PROJECT_DIR$/smapp/templates/publications_wall.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/views.py" afterPath="$PROJECT_DIR$/smapp/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smproject/settings.py" afterPath="$PROJECT_DIR$/smproject/settings.py" />
     </list>
     <ignored path="smproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,14 +36,14 @@
     <favorites_list name="smproject" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6068323">
+    <splitter split-orientation="horizontal" split-proportion="0.5310559">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/smapp/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+                <state relative-caret-position="600">
+                  <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
                   <folding>
                     <element signature="e#0#55#0" expanded="true" />
                   </folding>
@@ -58,11 +51,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="publications_wall.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index_dashboard.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/smapp/templates/index_dashboard.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1380">
+                  <caret line="92" column="78" selection-start-line="92" selection-start-column="78" selection-end-line="92" selection-end-column="78" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="publications_wall.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/smapp/templates/publications_wall.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+                <state relative-caret-position="765">
+                  <caret line="51" column="37" selection-start-line="12" selection-start-column="35" selection-end-line="51" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -72,14 +75,24 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/smapp/forms.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="817">
-                  <caret line="84" column="87" selection-start-line="84" selection-start-column="87" selection-end-line="84" selection-end-column="87" />
+                <state relative-caret-position="690">
+                  <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
                   <folding>
                     <element signature="e#24#48#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/smapp/templates/base.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="517">
+                  <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -119,13 +132,14 @@
         <option value="$PROJECT_DIR$/smapp/test/model_test.py" />
         <option value="$PROJECT_DIR$/smproject/settings.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/smapp/views.py" />
         <option value="$PROJECT_DIR$/smapp/urls.py" />
-        <option value="$PROJECT_DIR$/smapp/templates/base.html" />
         <option value="$PROJECT_DIR$/smapp/models.py" />
         <option value="$PROJECT_DIR$/smapp/templates/publish.html" />
         <option value="$PROJECT_DIR$/smapp/forms.py" />
         <option value="$PROJECT_DIR$/smapp/templates/publications_wall.html" />
+        <option value="$PROJECT_DIR$/smapp/templates/index_dashboard.html" />
+        <option value="$PROJECT_DIR$/smapp/templates/base.html" />
+        <option value="$PROJECT_DIR$/smapp/views.py" />
       </list>
     </option>
   </component>
@@ -566,7 +580,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23168316" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2113951" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2113951" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -595,21 +609,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smproject/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -894,14 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smapp/test/model_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="892">
@@ -913,14 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smapp/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -943,16 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smapp/templates/historical_record.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -969,13 +942,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/smapp/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="84" column="87" selection-start-line="84" selection-start-column="87" selection-end-line="84" selection-end-column="87" />
+        <state relative-caret-position="690">
+          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
           <folding>
             <element signature="e#24#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -994,9 +983,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smapp/templates/publications_wall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+        <state relative-caret-position="765">
+          <caret line="51" column="37" selection-start-line="12" selection-start-column="35" selection-end-line="51" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smapp/templates/index_dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="92" column="78" selection-start-line="92" selection-start-column="78" selection-end-line="92" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smapp/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
