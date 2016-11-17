@@ -16,16 +16,20 @@
                         <th>Nombre visita</th>
                         <th>Rut</th>
                         <th>Fecha - Hora</th>
-                        <th>Residente</th>
+                        <th>Recibido</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for record in records%}
                         <tr>
-                            <th>{{ record.name }}</th>
-                            <th>{{ record.rut }}</th>
-                            <th>{{ record.date }}</th>
-                            <th>{{ record.resident }}</th>
+                            <td>{{ record.name }}</td>
+                            <td>{{ record.rut }}</td>
+                            <td>{{ record.date }}</td>
+                            {% if record.received == True %}
+                                <td><i class="fa fa-check fa-fw"></i>Si</td>
+                            {% else %}
+                                <td><i class="fa fa-times  fa-fw"></i>No</td>
+                            {% endif %}
                         </tr>
                     {% endfor %}
                     </tbody>
@@ -33,7 +37,7 @@
             </div>
         </div>
         <div class="panel-footer">
-            Revisa el historial de visitas para más detalles.
+            Revisa el <a href="/visit_record/">historial de visita</a> para más detalles.
         </div>
     </div>
 </div>
@@ -90,7 +94,7 @@
             </ul>
         </div>
          <div class="panel-footer">
-            Revisa el muro de mensajes para ver el resto de las publicaciones.
+            Revisa el <a href="/publications_wall/">muro de mensajes</a> para ver el resto de las publicaciones.
         </div><!-- /.panel-footer -->
     </div>
 </div>
