@@ -1,5 +1,6 @@
 dj-database-url==0.4.1
 Django==1.9.8
+django-chosen==0.1
 django-nose==1.4.4
 django-widget-tweaks==1.4.1
 gunicorn==19.6.0

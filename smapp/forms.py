@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import forms
 from smapp.models import *
-import sys
-from datetime import date
-from django.forms.extras.widgets import SelectDateWidget
+from chosen import forms as chosenforms
 
 
 def filtra(rut):
@@ -52,6 +50,12 @@ def valida(rut):
     return retorno
 
 
+class TakeNameField(chosenforms.ChosenModelChoiceField):
+    def label_from_instance(self, obj):
+        # return whatever text you want
+        return 'Nombre: ' + obj.userOrigin.first_name + ' ' + obj.userOrigin.last_name + ' ' + 'Piso: ' + str(obj.apartment.floor) + ' ' + 'Numero: ' +str(obj.apartment.number)
+
+
 class VisitForm(forms.ModelForm):
 
     name = forms.CharField(label='Nombre completo',
@@ -63,7 +67,8 @@ class VisitForm(forms.ModelForm):
                           max_length=12,
                           validators=[valida]
                           )
-    resident = forms.ModelChoiceField(queryset=Resident.objects.all())
+
+    resident = TakeNameField(queryset=Resident.objects.all())
     note = forms.CharField(label='Nota',
                            widget=forms.Textarea,
                            min_length=10,
@@ -77,9 +82,11 @@ class VisitForm(forms.ModelForm):
 
 
 class PublicationForm(forms.ModelForm):
+    CHOICES = (('1', 'Evento'), ('2', 'Reunion'), ('3', 'Urgente'), ('4', 'Aviso'), ('5', 'Otro'))
     title = forms.CharField(label='Titulo', max_length=100)
     message = forms.TextInput()
+    type = forms.ChoiceField(choices=CHOICES)
 
     class Meta:
         model = Publication
-        fields = ('title', 'message')
+        fields = ('title', 'message', 'type')

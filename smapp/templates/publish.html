@@ -15,10 +15,15 @@
                 {{ publication_form.title|add_class:"form-control"}}
                 {{ publication_form.title.errors }}
                  </div>
-                 <div class="form-group">
+                <div class="form-group">
                 <label>Contenido</label>
                 {{ publication_form.message|add_class:"form-control"}}
                 {{ publication_form.message.errors }}
+                </div>
+                <div class="form-group">
+                <label>Tipo de publicación</label>
+                {{ publication_form.type|add_class:"form-control"}}
+                {{ publication_form.type.errors }}
                 </div>
 
                 <button type="submit" class="btn green">Registrar</button>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-clock-o fa-fw"></i> Muro de mensajes
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <ul class="timeline">
+                                {% for publication in publications %}
+                                    {% if publication.id|divisibleby:2 %}
+                                        <li class="timeline-inverted">
+                                    {% else %}
+                                        <li>
+                                    {% endif %}
+                                    {% if publication.type == '1' %}
+                                        <div class="timeline-badge warning">
+                                        <i class="fa fa-calendar-o "></i>
+                                    {% elif publication.type == '2' %}
+                                        <div class="timeline-badge info">
+                                        <i class="fa fa-group"></i>
+                                    {% elif publication.type == '3' %}
+                                        <div class="timeline-badge danger">
+                                        <i class="fa fa-bomb"></i>
+                                    {% elif publication.type == '4' %}
+                                        <div class="timeline-badge success">
+                                        <i class="fa fa-bullhorn"></i>
+                                    {% elif publication.type == '5' %}
+                                        <div class="timeline-badge">
+                                        <i class="fa fa-info"></i>
+                                    {% else %}
+                                        <div class="timeline-badge">
+                                        <i class="fa fa-info"></i>
+                                    {% endif %}
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">{{ publication.title }}</h4>
+                                            <p><small class="text-muted">
+                                                <i class="fa fa-clock-o"></i> {{ publication.date }} {{ publication.hour }}</small>
+                                            </p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>{{ publication.message }}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+{% endblock %}

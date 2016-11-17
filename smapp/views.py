@@ -45,7 +45,6 @@ def dashboard(request):
         return render_to_response('login_error.html', {})
 
 
-
 @login_required
 def visit_record(request):
     current = request.user
@@ -58,12 +57,6 @@ def visit_record(request):
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
         return render_to_response('login_error.html', {})
-
-
-@login_required
-def user_logout(request):
-    logout(request)
-    return HttpResponseRedirect('/')
 
 
 @login_required
@@ -87,6 +80,26 @@ def publish(request):
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
         return render_to_response('login_error.html', {})
+
+
+@login_required
+def publications_wall(request):
+    current = request.user
+    try:
+        resident = Resident.objects.get(rut=current.username)
+        if resident:
+            publications = Publication.objects.order_by('id').all()
+            return render(request, 'publications_wall.html', {'publications': publications})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/')
 
 
 def login_concierge(request):

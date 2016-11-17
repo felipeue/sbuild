@@ -12,4 +12,5 @@ urlpatterns = patterns('',
                        url(r'^historical_record/$', views.historical_record, name='historical record'),
                        url(r'^visit_record/$', views.visit_record, name='visit record'),
                        url(r'^publish/$', views.publish, name='publish'),
+                       url(r'^publications_wall/$', views.publications_wall, name='publications_wall'),
                        )

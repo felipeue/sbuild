@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'smapp',
     'widget_tweaks',
-    'django_nose'
+    'django_nose',
+    'chosen',
 
 ]
 
