@@ -127,7 +127,8 @@ def dashboard_concierge(request):
         concierge = Consierge.objects.get(rut=current.username)
         if concierge:
             records = Visit.objects.order_by('-id')[:5]
-            return render(request, 'concierge_dashboard.html', {'records': records})
+            publications = Publication.objects.order_by('-id')[:5]
+            return render(request, 'concierge_dashboard.html', {'records': records , 'publications': publications})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:

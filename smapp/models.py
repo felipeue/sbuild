@@ -75,6 +75,16 @@ class Publication(models.Model):
 
     def __unicode__(self):
         return unicode(self.id)
+
+
+class Reservation(models.Model):
+    publisher = models.ForeignKey(Resident)
+    date = models.DateField()
+    hour = models.TimeField()
+    location = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return unicode(self.id)
 """
 class Owner(models.Model):
     rut = models.CharField(max_length=10)

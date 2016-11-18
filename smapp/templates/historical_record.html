@@ -17,6 +17,8 @@
                                         <th>Rut</th>
                                         <th>Fecha | Hora</th>
                                         <th>Residente</th>
+                                        <th>Piso</th>
+                                        <th>Numero</th>
                                         <th>Atendido</th>
                                         <th>Comentario</th>
                                     </tr>
@@ -27,7 +29,9 @@
                                             <td>{{ record.name }}</td>
                                             <td>{{ record.rut }}</td>
                                             <td>{{ record.date }}</td>
-                                            <td>{{ record.resident }}</td>
+                                            <td>{{ record.resident.userOrigin.first_name }} {{ record.resident.userOrigin.last_name }}</td>
+                                            <td>{{ record.resident.apartment.floor }}</td>
+                                            <td>{{ record.resident.apartment.number }}</td>
                                             {% if record.received == True %}
                                                 <td><i class="fa fa-check fa-fw"></i>Si</td>
                                             {% else %}
