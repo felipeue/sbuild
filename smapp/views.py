@@ -3,11 +3,11 @@ from smapp.models import *
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from smapp.forms import VisitForm, PublicationForm
+from smapp.forms import VisitForm, PublicationForm, EventForm
 from django.core.exceptions import ObjectDoesNotExist
-
-
+from fullcalendar.util import events_to_json
 # Create your views here.
+
 
 def index(request):
     return render(request, 'index.html', {})
@@ -98,6 +98,49 @@ def publications_wall(request):
 
 
 @login_required
+def calendar(request):
+    current = request.user
+    try:
+        resident = Resident.objects.get(rut=current.username)
+        if resident:
+            return render(request, 'calendar_locations.html', {})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+def all_events(request):
+    events = Event.objects.all().values('title', 'start', 'end', 'all_day')
+    return HttpResponse(events_to_json(events), content_type='application/json')
+
+
+@login_required
+def create_event(request):
+    current = request.user
+    try:
+        resident = Resident.objects.get(rut=current.username)
+        if resident:
+            if request.method == 'POST':
+                event_form = EventForm(data=request.POST)
+                if event_form.is_valid():
+                    event = event_form.save(commit=False)
+                    event.all_day = 0
+                    event.end = event.start
+                    event.resident = resident
+                    event.title = event.resident.userOrigin.first_name + ' ' + event.resident.userOrigin.last_name + '-' + event.location
+                    event.save()
+                    return HttpResponseRedirect('/calendar_locations/')
+            else:
+                event_form = EventForm()
+            return render(request, 'register_event.html', {'event_form': event_form})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/')
@@ -169,6 +212,3 @@ def historical_record(request):
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
         return render_to_response('login_error.html', {})
-
-
-

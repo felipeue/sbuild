@@ -2,6 +2,8 @@
 from django import forms
 from smapp.models import *
 from chosen import forms as chosenforms
+from django.forms.extras.widgets import SelectDateWidget
+from datetime import date
 
 
 def filtra(rut):
@@ -90,3 +92,13 @@ class PublicationForm(forms.ModelForm):
     class Meta:
         model = Publication
         fields = ('title', 'message', 'type')
+
+
+class EventForm(forms.ModelForm):
+    CHOICES = (('Quincho', 'Quincho'), ('Sala de eventos', 'Sala de eventos'), ('Azotea', 'Azotea'))
+    start = forms.CharField()
+    location = forms.ChoiceField(choices=CHOICES)
+
+    class Meta:
+        model = Event
+        fields = ('start', 'location',)

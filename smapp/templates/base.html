@@ -101,7 +101,16 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-calendar fa-fw"></i> Espacios compartidos</a>
+                            <a href="#"><i class="fa fa-calendar fa-fw"></i> Espacios compartidos <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/create_event/"><i class="fa  fa-pencil fa-fw"></i>Realizar reserva</a>
+                                </li>
+                                <li>
+                                    <a href="/calendar_locations/"><i class="fa fa-comment-o  fa-fw"></i>Ver reservas</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                     </ul>
                 </div>
@@ -135,19 +144,21 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static "dashboard/bower_components/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "dashboard/bower_components/bootstrap/dist/js/bootstrap.js" %}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="{% static "dashboard/bower_components/metisMenu/dist/metisMenu.min.js" %}" ></script>
 
     <!-- Morris Charts JavaScript -->
     <script src="{% static "dashboard/bower_components/raphael/raphael-min.js" %}"></script>
-   
+
 
     <!-- Custom Theme JavaScript -->
     <script src="{% static "dashboard/dist/js/sb-admin-2.js" %}"></script>
      <script src="{% static "dashboard/vendor/datatables/js/jquery.dataTables.min.js" %}"></script>
     <script src="{% static "dashboard/vendor/datatables-plugins/dataTables.bootstrap.min.js" %}"></script>
     <script src="{% static "dashboard/vendor/datatables-responsive/dataTables.responsive.js" %}"></script>
+    <script>src</script>
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({

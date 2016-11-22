@@ -1,9 +1,11 @@
 dj-database-url==0.4.1
 Django==1.9.8
 django-chosen==0.1
+-e git+https://github.com/rodrigoamaral/django-fullcalendar.git@d116fcfc2093e57035932a9ea7c111d449fd7e4d#egg=django_fullcalendar
 django-nose==1.4.4
 django-widget-tweaks==1.4.1
 gunicorn==19.6.0
 nose==1.3.7
 psycopg2==2.6.2
+pytz==2016.7
 whitenoise==3.2

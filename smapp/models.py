@@ -77,61 +77,13 @@ class Publication(models.Model):
         return unicode(self.id)
 
 
-class Reservation(models.Model):
-    publisher = models.ForeignKey(Resident)
-    date = models.DateField()
-    hour = models.TimeField()
-    location = models.CharField(max_length=50)
+class Event(models.Model):
+    title = models.CharField(max_length=100)
+    start = models.CharField(max_length=100)
+    end = models.CharField(max_length=100)
+    all_day = models.IntegerField()
+    resident = models.ForeignKey(Resident)
+    location = models.CharField(max_length=100)
 
     def __unicode__(self):
         return unicode(self.id)
-"""
-class Owner(models.Model):
-    rut = models.CharField(max_length=10)
-    phone = models.CharField(max_length=20)
-
-    def __unicode__(self):
-        return unicode(self.id)
-
-
-class Concierge(models.Model):
-    userOrigin = models.OneToOneField(User)
-    rut = models.CharField(max_length=10, unique=True)
-    phone = models.CharField(max_length=20)
-
-    def __unicode__(self):
-        return self.userOrigin.username
-
-
-class Resident(models.Model):
-    userOrigin = models.OneToOneField(User)
-    rut = models.CharField(max_length=10, unique=True)
-    phone = models.CharField(max_length=20)
-    owner = models.BooleanField(default=False)
-    apartment = models.ForeignKey(Apartment)
-
-    def __unicode__(self):
-        return self.userOrigin.username
-
-class UserSM(models.Model):
-    OWNER = 'O'
-    CONCIERGE = 'C'
-    RESIDENT = 'R'
-    USER_TYPE_CHOICES = (
-        (OWNER, 'Owner'),
-        (CONCIERGE, 'Concierge'),
-        (RESIDENT, 'Resident'),
-    )
-    userOrigin = models.OneToOneField(User)
-    apartment = models.ForeignKey(Apartment, blank=True, null=True)
-    building = models.ForeignKey(Building, blank=True, null=True)
-    rut = models.CharField(max_length=10)
-    phone = models.CharField(max_length=20)
-    user_type = models.CharField(
-        max_length=1,
-        choices=USER_TYPE_CHOICES,
-    )
-
-    def __unicode__(self):
-        return self.userOrigin.username
-"""

@@ -13,4 +13,7 @@ urlpatterns = patterns('',
                        url(r'^visit_record/$', views.visit_record, name='visit record'),
                        url(r'^publish/$', views.publish, name='publish'),
                        url(r'^publications_wall/$', views.publications_wall, name='publications_wall'),
+                       url(r'^calendar_locations/$', views.calendar, name='calendar'),
+                       url(r'^all_events/$', views.all_events, name='calendar'),
+                       url(r'^create_event/$', views.create_event, name='create_event'),
                        )
