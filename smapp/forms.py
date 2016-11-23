@@ -2,8 +2,6 @@
 from django import forms
 from smapp.models import *
 from chosen import forms as chosenforms
-from django.forms.extras.widgets import SelectDateWidget
-from datetime import date
 
 
 def filtra(rut):

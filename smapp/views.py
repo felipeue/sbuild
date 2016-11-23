@@ -129,8 +129,13 @@ def create_event(request):
                     event.end = event.start
                     event.resident = resident
                     event.title = event.resident.userOrigin.first_name + ' ' + event.resident.userOrigin.last_name + '-' + event.location
-                    event.save()
-                    return HttpResponseRedirect('/calendar_locations/')
+                    r = Event.objects.filter(start__contains=event.start)
+                    r = Event.objects.filter(location__contains=event.location)
+                    if r:
+                        return render_to_response('reserv_error.html', {})
+                    else:
+                        event.save()
+                        return HttpResponseRedirect('/calendar_locations/')
             else:
                 event_form = EventForm()
             return render(request, 'register_event.html', {'event_form': event_form})
