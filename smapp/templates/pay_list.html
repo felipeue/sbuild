@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+    <div class="col-lg-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Lista de pagos de gastos comunes
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+                        <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>Monto</th>
+                        <th>Mes</th>
+                        <th>Fecha de pago</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rent in rents%}
+                        <tr>
+                            <td>{{ rent.amount }}</td>
+                            <td>{{ rent.month }}</td>
+                            <td>{{ rent.date }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -87,3 +87,10 @@ class Event(models.Model):
 
     def __unicode__(self):
         return unicode(self.id)
+
+
+class Rent(models.Model):
+    month = models.CharField(max_length=50)
+    amount = models.IntegerField()
+    resident = models.ForeignKey(Resident)
+    date = models.DateTimeField(default=datetime.now())

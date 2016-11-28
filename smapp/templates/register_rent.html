@@ -1,0 +1,34 @@
+{% extends 'base_owner.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block main %}
+<div class="col-lg-6">
+
+
+        <!-- /.panel-heading -->
+
+        <form name="myForm" id="user_form" method="post" action="/register_rent/" enctype="multipart/form-data" class="form-horizontal" onsubmit="return validateForm()">
+        {% csrf_token %}
+                <div class="form-group">
+                <label>Mes</label>
+                {{ rent_form.month|add_class:"form-control"}}
+                {{ rent_form.errors }}
+                 </div>
+                 <div class="form-group">
+                <label>Monto</label>
+                {{ rent_form.amount|add_class:"form-control"}}
+                {{ visit_form.rut.errors }}
+                </div>
+                <div class="form-group">
+                <label>Residente</label>
+                {{ rent_form.resident|add_class:"form-control" }}
+                {{ visit_form.received.errors }}
+                </div>
+
+                <button type="submit" class="btn green">Registrar</button>
+         </form>
+
+
+</div>
+{% endblock %}

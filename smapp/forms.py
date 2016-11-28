@@ -100,3 +100,14 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = Event
         fields = ('start', 'location',)
+
+
+class RentForm(forms.ModelForm):
+    CHOICES = (('Enero', 'Enero'), ('Febrero', 'Febrero'), ('Marzo', 'Marzo'), ('Abril', 'Abril'), ('Mayo', 'Mayo'), ('Junio', 'Junio'), ('Julio', 'Julio'), ('Agosto', 'Agosto'), ('Septiembre', 'Septiembre'), ('Octubre', 'Octubre'), ('Noviembre', 'Noviembre'), ('Diciembre', 'Diciembre'))
+    month = forms.ChoiceField(choices=CHOICES)
+    amount = forms.IntegerField()
+    resident = TakeNameField(queryset=Resident.objects.all())
+
+    class Meta:
+        model = Rent
+        fields = ('month', 'amount', 'resident')
