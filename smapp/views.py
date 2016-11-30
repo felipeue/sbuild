@@ -39,7 +39,9 @@ def dashboard(request):
             r = Resident.objects.filter(userOrigin=current)
             publications = Publication.objects.order_by('-id')[:5]
             records = Visit.objects.filter(resident=r).order_by('-id')[:5]
-            return render(request, 'index_dashboard.html', {'records': records, 'publications': publications})
+            reservations = Event.objects.order_by('-id')[:6]
+            payments = Rent.objects.filter(resident=r).order_by('id')[:5]
+            return render(request, 'index_dashboard.html', {'records': records, 'publications': publications, 'reservations': reservations,  'payments': payments})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:

@@ -2,8 +2,9 @@
 {% load staticfiles %}
 
 {% block main %}
+    <div class="row">
 <div class="col-lg-6">
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
         <div class="panel-heading">
             Lista de últimas visitas
         </div>
@@ -39,7 +40,7 @@
             </div>
         </div>
         <div class="panel-footer">
-            Revisa el <a href="/visit_record/">historial de visita</a> para más detalles.
+            Revisa el <a href="/historical_record_owner/">historial de visita</a> para más detalles.
         </div>
     </div>
 </div>
@@ -96,23 +97,10 @@
             </ul>
         </div>
          <div class="panel-footer">
-            Revisa el <a href="/publications_wall/">muro de mensajes</a> para ver el resto de las publicaciones.
+            Revisa el <a href="/publications_wall_owner/">muro de mensajes</a> para ver el resto de las publicaciones.
         </div><!-- /.panel-footer -->
     </div>
 </div>
-<div class="col-lg-6">
-    <div class="panel panel-warning">
-        <div class="panel-heading">
-            Fechas disponibles de espacios compartidos
-        </div>
-        <!-- /.panel-heading -->
-        <div class="panel-body">
 
-
-        </div>
-        <div class="panel-footer">
-            Realiza una reserva.
-        </div>
     </div>
-</div>
 {% endblock %}
