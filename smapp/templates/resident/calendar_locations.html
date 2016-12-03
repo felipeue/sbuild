@@ -1,0 +1,19 @@
+{% extends 'resident/base.html' %}
+{% load staticfiles %}
+
+
+{% block main %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css"/>
+
+     <div id="calendar"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js"></script>
+<script>
+        (function ($) {
+            $('#calendar').fullCalendar({
+                events: '/all_events/',
+                firstDay: 1,
+            });
+        })(jQuery);
+    </script>
+{% endblock %}

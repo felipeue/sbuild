@@ -3,7 +3,7 @@ from smapp.models import *
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from smapp.forms import VisitForm, PublicationForm, EventForm, RentForm
+from smapp.forms import VisitForm, PublicationForm, EventForm, RentForm, UserForm, ResidentForm
 from django.core.exceptions import ObjectDoesNotExist
 from fullcalendar.util import events_to_json
 # Create your views here.
@@ -27,7 +27,7 @@ def login_user(request):
         else:
             return HttpResponseRedirect('/login/')
     else:
-        return render(request, 'login.html', {})
+        return render(request, 'resident/login.html', {})
 
 
 @login_required
@@ -41,7 +41,7 @@ def dashboard(request):
             records = Visit.objects.filter(resident=r).order_by('-id')[:5]
             reservations = Event.objects.order_by('-id')[:6]
             payments = Rent.objects.filter(resident=r).order_by('id')[:5]
-            return render(request, 'index_dashboard.html', {'records': records, 'publications': publications, 'reservations': reservations,  'payments': payments})
+            return render(request, 'resident/index_dashboard.html', {'records': records, 'publications': publications, 'reservations': reservations, 'payments': payments})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -55,7 +55,7 @@ def visit_record(request):
         resident = Resident.objects.get(rut=current.username)
         if resident:
             records = Visit.objects.filter(resident=resident).order_by('id').all()
-            return render(request, 'visit_record.html', {'records': records})
+            return render(request, 'consierge/visit_record.html', {'records': records})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -78,7 +78,7 @@ def publish(request):
                     return HttpResponseRedirect('/dashboard/')
             else:
                 publication_form = PublicationForm()
-            return render(request, 'publish.html', {'publication_form': publication_form})
+            return render(request, 'resident/publish.html', {'publication_form': publication_form})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -92,7 +92,7 @@ def publications_wall(request):
         resident = Resident.objects.get(rut=current.username)
         if resident:
             publications = Publication.objects.order_by('-id').all()
-            return render(request, 'publications_wall.html', {'publications': publications})
+            return render(request, 'resident/publications_wall.html', {'publications': publications})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -106,7 +106,7 @@ def rent_pay(request):
         resident = Resident.objects.get(rut=current.username)
         if resident:
             rents = Rent.objects.filter(resident=resident).order_by('-id').all()
-            return render(request, 'pay_list.html', {'rents': rents})
+            return render(request, 'resident/pay_list.html', {'rents': rents})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -119,7 +119,7 @@ def calendar(request):
     try:
         resident = Resident.objects.get(rut=current.username)
         if resident:
-            return render(request, 'calendar_locations.html', {})
+            return render(request, 'resident/calendar_locations.html', {})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -144,9 +144,9 @@ def create_event(request):
                     event.all_day = 0
                     event.end = event.start
                     event.resident = resident
-                    event.title = event.resident.userOrigin.first_name + ' ' + event.resident.userOrigin.last_name + '-' + event.location
+                    event.title = event.resident.userOrigin.first_name + ' ' + event.resident.userOrigin.last_name + '-' + event.location.name
                     s = Event.objects.filter(start__contains=event.start)
-                    l = Event.objects.filter(location__contains=event.location)
+                    l = Event.objects.filter(location=event.location)
                     if s and l:
                         return render_to_response('reserv_error.html', {})
                     else:
@@ -154,7 +154,7 @@ def create_event(request):
                         return HttpResponseRedirect('/calendar_locations/')
             else:
                 event_form = EventForm()
-            return render(request, 'register_event.html', {'event_form': event_form})
+            return render(request, 'resident/register_event.html', {'event_form': event_form})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -181,7 +181,7 @@ def login_concierge(request):
         else:
             return HttpResponseRedirect('/login_concierge/')
     else:
-        return render(request, 'login_concierge.html', {})
+        return render(request, 'consierge/login_concierge.html', {})
 
 
 @login_required
@@ -192,7 +192,7 @@ def dashboard_concierge(request):
         if concierge:
             records = Visit.objects.order_by('-id')[:5]
             publications = Publication.objects.order_by('-id')[:5]
-            return render(request, 'concierge_dashboard.html', {'records': records , 'publications': publications})
+            return render(request, 'consierge/concierge_dashboard.html', {'records': records , 'publications': publications})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -214,7 +214,7 @@ def register_visit(request):
                     return HttpResponseRedirect('/historical_record/')
             else:
                 visit_form = VisitForm()
-            return render(request, 'register_visit.html', {'visit_form': visit_form})
+            return render(request, 'consierge/register_visit.html', {'visit_form': visit_form})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -228,7 +228,7 @@ def historical_record(request):
         concierge = Consierge.objects.get(rut=current.username)
         if concierge:
             records = Visit.objects.order_by('id').all()
-            return render(request, 'historical_record.html', {'records': records})
+            return render(request, 'consierge/historical_record.html', {'records': records})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -242,7 +242,7 @@ def publications_wall_consierge(request):
         consierge = Consierge.objects.get(rut=current.username)
         if consierge:
             publications = Publication.objects.order_by('-id').all()
-            return render(request, 'publications_wall_consierge.html', {'publications': publications})
+            return render(request, 'consierge/publications_wall_consierge.html', {'publications': publications})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -255,7 +255,7 @@ def calendar_consierge(request):
     try:
         consierge = Consierge.objects.get(rut=current.username)
         if consierge:
-            return render(request, 'calendar_locations_consierge.html', {})
+            return render(request, 'consierge/calendar_locations_consierge.html', {})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -276,7 +276,7 @@ def login_owner(request):
         else:
             return HttpResponseRedirect('/login_owner/')
     else:
-        return render(request, 'login_owner.html', {})
+        return render(request, 'owner/login_owner.html', {})
 
 
 @login_required
@@ -287,7 +287,7 @@ def dashboard_owner(request):
         if owner:
             records = Visit.objects.order_by('-id')[:5]
             publications = Publication.objects.order_by('-id')[:5]
-            return render(request, 'owner_dashboard.html', {'records': records, 'publications': publications})
+            return render(request, 'owner/owner_dashboard.html', {'records': records, 'publications': publications})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -308,7 +308,7 @@ def register_rent(request):
                     return HttpResponseRedirect('/dashboard_owner/')
             else:
                 rent_form = RentForm()
-            return render(request, 'register_rent.html', {'rent_form': rent_form})
+            return render(request, 'owner/register_rent.html', {'rent_form': rent_form})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -322,7 +322,7 @@ def historical_record_owner(request):
         owner = Owner.objects.get(rut=current.username)
         if owner:
             records = Visit.objects.order_by('id').all()
-            return render(request, 'historical_record_owner.html', {'records': records})
+            return render(request, 'owner/historical_record_owner.html', {'records': records})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -335,7 +335,7 @@ def calendar_owner(request):
     try:
         owner = Owner.objects.get(rut=current.username)
         if owner:
-            return render(request, 'calendar_location_owner.html', {})
+            return render(request, 'owner/calendar_location_owner.html', {})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -349,7 +349,52 @@ def publications_wall_owner(request):
         owner = Owner.objects.get(rut=current.username)
         if owner:
             publications = Publication.objects.order_by('-id').all()
-            return render(request, 'publications_wall_owner.html', {'publications': publications})
+            return render(request, 'owner/publications_wall_owner.html', {'publications': publications})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def create_resident(request):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            if request.method == 'POST':
+                user_form = UserForm(data=request.POST)
+                resident_form = ResidentForm(data=request.POST)
+                if user_form.is_valid() and resident_form.is_valid():
+                    user = user_form.save()
+                    user.set_password(user.password)
+                    user.save()
+                    resident = resident_form.save(commit=False)
+                    resident.userOrigin = user
+                    resident.rut = user.username
+                    resident.save()
+                    return HttpResponseRedirect('/dashboard_owner/')
+                else:
+                    print user_form.errors, resident_form.errors
+            else:
+                user_form = UserForm()
+                resident_form = ResidentForm()
+            return render(request, 'owner/register_resident', {'user_form': user_form, 'resident_form': resident_form})
+
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def list_residents(request):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            residents = Resident.objects.all()
+            return render(request, 'owner/list_residents.html', {'residents': residents})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:

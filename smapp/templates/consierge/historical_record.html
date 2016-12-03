@@ -1,0 +1,55 @@
+{% extends 'consierge/base_concierge.html' %}
+{% load staticfiles %}
+
+{% block main %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Listado de registros de visitas
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre visita</th>
+                                        <th>Rut</th>
+                                        <th>Fecha | Hora</th>
+                                        <th>Residente</th>
+                                        <th>Piso</th>
+                                        <th>Numero</th>
+                                        <th>Atendido</th>
+                                        <th>Comentario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for record in records%}
+                                        <tr class="odd gradeX">
+                                            <td>{{ record.name }}</td>
+                                            <td>{{ record.rut }}</td>
+                                            <td>{{ record.date }}</td>
+                                            <td>{{ record.resident.userOrigin.first_name }} {{ record.resident.userOrigin.last_name }}</td>
+                                            <td>{{ record.resident.apartment.floor }}</td>
+                                            <td>{{ record.resident.apartment.number }}</td>
+                                            {% if record.received == True %}
+                                                <td><i class="fa fa-check fa-fw"></i>Si</td>
+                                            {% else %}
+                                                <td><i class="fa fa-times  fa-fw"></i>No</td>
+                                            {% endif %}
+                                            <td>{{ record.note }}</td>
+                                        </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+{% endblock %}

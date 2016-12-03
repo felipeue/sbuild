@@ -77,13 +77,21 @@ class Publication(models.Model):
         return unicode(self.id)
 
 
+class Location(models.Model):
+    name = models.CharField(max_length=100)
+    building = models.ForeignKey(Building)
+
+    def __unicode__(self):
+        return unicode(self.id)
+
+
 class Event(models.Model):
     title = models.CharField(max_length=100)
     start = models.CharField(max_length=100)
     end = models.CharField(max_length=100)
     all_day = models.IntegerField()
     resident = models.ForeignKey(Resident)
-    location = models.CharField(max_length=100)
+    location = models.ForeignKey(Location)
 
     def __unicode__(self):
         return unicode(self.id)

@@ -25,4 +25,6 @@ urlpatterns = patterns('',
                        url(r'^publications_wall_owner/$', views.publications_wall_owner, name='publications_wall_owner'),
                        url(r'^calendar_owner/$', views.calendar_owner, name='calendar_owner'),
                        url(r'^pay_list/$', views.rent_pay, name='rent_pay'),
+                       url(r'^register_resident/$', views.create_resident, name='register_resident'),
+                       url(r'^list_residents/$', views.list_residents, name='list_residents'),
                        )

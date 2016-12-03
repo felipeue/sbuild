@@ -92,10 +92,15 @@ class PublicationForm(forms.ModelForm):
         fields = ('title', 'message', 'type')
 
 
+class TakeLocationField(chosenforms.ChosenModelChoiceField):
+    def label_from_instance(self, obj):
+        # return whatever text you want
+        return obj.name
+
+
 class EventForm(forms.ModelForm):
-    CHOICES = (('Quincho', 'Quincho'), ('Sala de eventos', 'Sala de eventos'), ('Azotea', 'Azotea'))
     start = forms.CharField()
-    location = forms.ChoiceField(choices=CHOICES)
+    location = TakeLocationField(queryset=Location.objects.all())
 
     class Meta:
         model = Event
@@ -111,3 +116,39 @@ class RentForm(forms.ModelForm):
     class Meta:
         model = Rent
         fields = ('month', 'amount', 'resident')
+
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+    username = forms.CharField(label='Rut',
+                               min_length=5,
+                               widget=forms.TextInput,
+                               )
+
+    first_name = forms.CharField(label='Nombre',
+                                 min_length=5,
+                                 widget=forms.TextInput,
+                                 )
+    last_name = forms.CharField(label='Apellido',
+                                min_length=5,
+                                widget=forms.TextInput,
+                                )
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password', 'first_name', 'last_name')
+
+
+class TakeAparmentField(chosenforms.ChosenModelChoiceField):
+    def label_from_instance(self, obj):
+        # return whatever text you want
+        return 'Nº: ' + str(obj.number) + ' ' + 'Piso: ' + str(obj.floor)
+
+
+class ResidentForm(forms.ModelForm):
+    phone = models.CharField(max_length=20)
+    apartment = TakeAparmentField(queryset=Apartment.objects.all())
+
+    class Meta:
+        model = Resident
+        fields = ('phone', 'apartment',)
