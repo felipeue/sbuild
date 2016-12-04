@@ -2,8 +2,10 @@
 {% load staticfiles %}
 
 {% block main %}
+
 <div class="row">
     <div class="col-lg-8">
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 Lista de últimas visitas
@@ -97,6 +99,19 @@
         </div>
     </div>
     <div class="col-lg-4">
+    <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-user fa-fw"></i>Mis datos
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <strong><p>{{ resident.userOrigin.first_name }} {{ resident.userOrigin.last_name }}</p></strong>
+                <strong><p>Departamento: {{ resident.apartment.number }}</p></strong>
+                <strong><p>Piso: {{ resident.apartment.floor }}</p></strong>
+            </div>
+            <div class="panel-footer">
+            </div>
+        </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <i class="fa fa-calendar fa-fw"></i> Úilmas reservas realizadas

@@ -1,0 +1,23 @@
+{% extends 'owner/base_owner.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+<h3>Agregar espacio compartido</h3>
+{% block main %}
+        <form  method="post" action="/create_location/" enctype="multipart/form-data" class="form-horizontal" onsubmit="return validateForm()">
+                {% csrf_token %}
+                <div>
+                <label>Nombre</label>
+                {{ location_form.name|add_class:"form-control"}}
+                {{ location_form.name.errors }}
+                </div>
+                <div>
+                <label>Edificio</label>
+                {{ location_form.building|add_class:"form-control"}}
+                {{ location_form.building.errors }}
+                </div>
+
+                <br>
+                <button type="submit" class="btn green">Registrar</button>
+         </form>
+    <script src="{% static "validators/rut.js" %}"></script>
+{% endblock %}

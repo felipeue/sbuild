@@ -3,7 +3,7 @@ from smapp.models import *
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from smapp.forms import VisitForm, PublicationForm, EventForm, RentForm, UserForm, ResidentForm
+from smapp.forms import *
 from django.core.exceptions import ObjectDoesNotExist
 from fullcalendar.util import events_to_json
 # Create your views here.
@@ -41,7 +41,7 @@ def dashboard(request):
             records = Visit.objects.filter(resident=r).order_by('-id')[:5]
             reservations = Event.objects.order_by('-id')[:6]
             payments = Rent.objects.filter(resident=r).order_by('id')[:5]
-            return render(request, 'resident/index_dashboard.html', {'records': records, 'publications': publications, 'reservations': reservations, 'payments': payments})
+            return render(request, 'resident/index_dashboard.html', {'records': records, 'publications': publications, 'reservations': reservations, 'payments': payments, 'resident': resident})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -395,6 +395,135 @@ def list_residents(request):
         if owner:
             residents = Resident.objects.all()
             return render(request, 'owner/list_residents.html', {'residents': residents})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def delete_resident(request, resident_id):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            resident = User.objects.get(id=resident_id)
+            resident.delete()
+            return HttpResponseRedirect('/list_residents/')
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def create_consierge(request):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            if request.method == 'POST':
+                user_form = UserForm(data=request.POST)
+                consierge_form = ConsiergeForm(data=request.POST)
+                if user_form.is_valid() and consierge_form.is_valid():
+                    user = user_form.save()
+                    user.set_password(user.password)
+                    user.save()
+                    consierge = consierge_form.save(commit=False)
+                    consierge.userOrigin = user
+                    consierge.rut = user.username
+                    consierge.save()
+                    return HttpResponseRedirect('/dashboard_owner/')
+                else:
+                    print user_form.errors, consierge_form.errors
+            else:
+                user_form = UserForm()
+                consierge_form = ConsiergeForm()
+            return render(request, 'owner/register_consierge.html', {'user_form': user_form, 'consierge_form': consierge_form})
+
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def list_consierge(request):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            consierges = Consierge.objects.all()
+            return render(request, 'owner/list_consierges.html', {'consierges': consierges})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def delete_consierge(request, consierge_id):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            consierge = User.objects.get(id=consierge_id)
+            consierge.delete()
+            return HttpResponseRedirect('/list_consierges/')
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+
+@login_required
+def create_location(request):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            if request.method == 'POST':
+                location_form = LocationForm(data=request.POST)
+                if location_form.is_valid():
+                    location = location_form.save()
+                    location.save()
+                    return HttpResponseRedirect('/list_locations/')
+                else:
+                    print location_form.errors
+            else:
+                location_form = LocationForm()
+            return render(request, 'owner/register_location.html', {'location_form': location_form})
+
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def list_location(request):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            locations = Location.objects.all()
+            return render(request, 'owner/list_locations.html', {'locations': locations})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def delete_location(request, location_id):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            location = Location.objects.get(id=location_id)
+            location.delete()
+            return HttpResponseRedirect('/list_consierges/')
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:

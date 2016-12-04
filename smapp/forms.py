@@ -146,9 +146,33 @@ class TakeAparmentField(chosenforms.ChosenModelChoiceField):
 
 
 class ResidentForm(forms.ModelForm):
-    phone = models.CharField(max_length=20)
+    phone = forms.CharField(max_length=20)
     apartment = TakeAparmentField(queryset=Apartment.objects.all())
 
     class Meta:
         model = Resident
         fields = ('phone', 'apartment',)
+
+
+class TakeBuildingField(chosenforms.ChosenModelChoiceField):
+    def label_from_instance(self, obj):
+        # return whatever text you want
+        return obj.name
+
+
+class ConsiergeForm(forms.ModelForm):
+    phone = forms.CharField(max_length=20)
+    building = TakeBuildingField(queryset=Building.objects.all())
+
+    class Meta:
+        model = Consierge
+        fields = ('phone', 'building',)
+
+
+class LocationForm(forms.ModelForm):
+    name = forms.CharField(max_length=60)
+    building = TakeBuildingField(queryset=Building.objects.all())
+
+    class Meta:
+        model = Location
+        fields = ('name', 'building')

@@ -1,0 +1,47 @@
+{% extends 'owner/base_owner.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block main %}
+        <form  method="post" action="/create_consierge/" enctype="multipart/form-data" class="form-horizontal" onsubmit="return validateForm()">
+                {% csrf_token %}
+                <div >
+                <label>Rut</label>
+                {% render_field user_form.username oninput="checkRut(this)" class="form-control" %}
+                {{ user_form.username.errors }}
+                 </div>
+                 <div >
+                <label>Nombres</label>
+                {{ user_form.first_name|add_class:"form-control"}}
+                {{ user_form.first_name.errors }}
+                </div>
+                <div>
+                <label>Apellidos</label>
+                {{ user_form.last_name|add_class:"form-control" }}
+                {{ user_form.las_name.errors }}
+                </div>
+                <div>
+                <label>Email</label>
+                {{ user_form.email|add_class:"form-control" }}
+                {{ user_form.email.errors }}
+                </div>
+                <div>
+                <label>Contraseña</label>
+                {{ user_form.password|add_class:"form-control" }}
+                {{ user_form.password.errors }}
+                </div>
+                <div>
+                <label>Teléfono</label>
+                {{ consierge_form.phone|add_class:"form-control" }}
+                {{ consierge_form.phone.errors }}
+                </div>
+                <div>
+                <label>Edificio</label>
+                {{ consierge_form.building|add_class:"form-control" }}
+                {{ consierge_form.building.errors }}
+                </div>
+                <br>
+                <button type="submit" class="btn green">Registrar</button>
+         </form>
+    <script src="{% static "validators/rut.js" %}"></script>
+{% endblock %}
