@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'index.html', {})
 
 
-def login_user(request):
+def login_resident(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -31,7 +31,7 @@ def login_user(request):
 
 
 @login_required
-def dashboard(request):
+def dashboard_resident(request):
     current = request.user
     try:
         resident = Resident.objects.get(rut=current.username)
@@ -41,7 +41,14 @@ def dashboard(request):
             records = Visit.objects.filter(resident=r).order_by('-id')[:5]
             reservations = Event.objects.order_by('-id')[:6]
             payments = Rent.objects.filter(resident=r).order_by('id')[:5]
-            return render(request, 'resident/index_dashboard.html', {'records': records, 'publications': publications, 'reservations': reservations, 'payments': payments, 'resident': resident})
+            return render(request, 'resident/index_dashboard.html',
+                          {
+                              'records': records,
+                              'publications': publications,
+                              'reservations': reservations,
+                              'payments': payments,
+                              'resident': resident
+                          })
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -49,13 +56,13 @@ def dashboard(request):
 
 
 @login_required
-def visit_record(request):
+def list_visit(request):
     current = request.user
     try:
         resident = Resident.objects.get(rut=current.username)
         if resident:
             records = Visit.objects.filter(resident=resident).order_by('id').all()
-            return render(request, 'consierge/visit_record.html', {'records': records})
+            return render(request, 'resident/visit_record.html', {'records': records})
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -63,7 +70,7 @@ def visit_record(request):
 
 
 @login_required
-def publish(request):
+def post_publication(request):
     current = request.user
     try:
         resident = Resident.objects.get(rut=current.username)
@@ -74,7 +81,6 @@ def publish(request):
                     publication = publication_form.save(commit=False)
                     publication.resident = resident
                     publication.save()
-                    print publication_form.errors
                     return HttpResponseRedirect('/dashboard/')
             else:
                 publication_form = PublicationForm()
@@ -100,7 +106,7 @@ def publications_wall(request):
 
 
 @login_required
-def rent_pay(request):
+def rent_list(request):
     current = request.user
     try:
         resident = Resident.objects.get(rut=current.username)
@@ -114,7 +120,7 @@ def rent_pay(request):
 
 
 @login_required
-def calendar(request):
+def event_calendar(request):
     current = request.user
     try:
         resident = Resident.objects.get(rut=current.username)
@@ -167,7 +173,7 @@ def user_logout(request):
     return HttpResponseRedirect('/')
 
 
-def login_concierge(request):
+def login_consierge(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -185,14 +191,18 @@ def login_concierge(request):
 
 
 @login_required
-def dashboard_concierge(request):
+def dashboard_consierge(request):
     current = request.user
     try:
         concierge = Consierge.objects.get(rut=current.username)
         if concierge:
             records = Visit.objects.order_by('-id')[:5]
             publications = Publication.objects.order_by('-id')[:5]
-            return render(request, 'consierge/concierge_dashboard.html', {'records': records , 'publications': publications})
+            return render(request, 'consierge/concierge_dashboard.html',
+                          {
+                              'records': records,
+                              'publications': publications
+                          })
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -210,7 +220,6 @@ def register_visit(request):
                 if visit_form.is_valid():
                     visit = visit_form.save(commit=False)
                     visit.save()
-                    print visit_form.errors
                     return HttpResponseRedirect('/historical_record/')
             else:
                 visit_form = VisitForm()
@@ -287,7 +296,11 @@ def dashboard_owner(request):
         if owner:
             records = Visit.objects.order_by('-id')[:5]
             publications = Publication.objects.order_by('-id')[:5]
-            return render(request, 'owner/owner_dashboard.html', {'records': records, 'publications': publications})
+            return render(request, 'owner/owner_dashboard.html',
+                          {
+                              'records': records,
+                              'publications': publications
+                          })
         else:
             return render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -304,7 +317,6 @@ def register_rent(request):
                 if rent_form.is_valid():
                     rent = rent_form.save(commit=False)
                     rent.save()
-                    print rent_form.errors
                     return HttpResponseRedirect('/dashboard_owner/')
             else:
                 rent_form = RentForm()
@@ -375,11 +387,15 @@ def create_resident(request):
                     resident.save()
                     return HttpResponseRedirect('/dashboard_owner/')
                 else:
-                    print user_form.errors, resident_form.errors
+                    render_to_response('login_error.html', {})
             else:
                 user_form = UserForm()
                 resident_form = ResidentForm()
-            return render(request, 'owner/register_resident', {'user_form': user_form, 'resident_form': resident_form})
+            return render(request, 'owner/register_resident',
+                          {
+                              'user_form': user_form,
+                              'resident_form': resident_form
+                          })
 
         else:
             render_to_response('login_error.html', {})
@@ -435,11 +451,15 @@ def create_consierge(request):
                     consierge.save()
                     return HttpResponseRedirect('/dashboard_owner/')
                 else:
-                    print user_form.errors, consierge_form.errors
+                    render_to_response('login_error.html', {})
             else:
                 user_form = UserForm()
                 consierge_form = ConsiergeForm()
-            return render(request, 'owner/register_consierge.html', {'user_form': user_form, 'consierge_form': consierge_form})
+            return render(request, 'owner/register_consierge.html',
+                          {
+                              'user_form': user_form,
+                              'consierge_form': consierge_form
+                          })
 
         else:
             render_to_response('login_error.html', {})
@@ -490,7 +510,7 @@ def create_location(request):
                     location.save()
                     return HttpResponseRedirect('/list_locations/')
                 else:
-                    print location_form.errors
+                    render_to_response('login_error.html', {})
             else:
                 location_form = LocationForm()
             return render(request, 'owner/register_location.html', {'location_form': location_form})
