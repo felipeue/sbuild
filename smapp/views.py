@@ -38,7 +38,7 @@ def dashboard_resident(request):
         if resident:
             r = Resident.objects.filter(userOrigin=current)
             publications = Publication.objects.order_by('-id')[:5]
-            records = Visit.objects.filter(resident=r).order_by('-id')[:5]
+            records = Visit.objects.filter(resident=current).order_by('-id')[:5]
             reservations = Event.objects.order_by('-id')[:6]
             payments = Rent.objects.filter(resident=r).order_by('id')[:5]
             return render(request, 'resident/index_dashboard.html',
@@ -61,7 +61,7 @@ def list_visit(request):
     try:
         resident = Resident.objects.get(rut=current.username)
         if resident:
-            records = Visit.objects.filter(resident=resident).order_by('id').all()
+            records = Visit.objects.filter(resident=current).order_by('id').all()
             return render(request, 'resident/visit_record.html', {'records': records})
         else:
             return render_to_response('login_error.html', {})
@@ -79,7 +79,7 @@ def post_publication(request):
                 publication_form = PublicationForm(data=request.POST)
                 if publication_form.is_valid():
                     publication = publication_form.save(commit=False)
-                    publication.resident = resident
+                    publication.publisher = current
                     publication.save()
                     return HttpResponseRedirect('/dashboard/')
             else:
@@ -150,7 +150,10 @@ def create_event(request):
                     event.all_day = 0
                     event.end = event.start
                     event.resident = resident
-                    event.title = event.resident.userOrigin.first_name + ' ' + event.resident.userOrigin.last_name + '-' + event.location.name
+                    nombre = event.resident.userOrigin.first_name
+                    apellido = event.resident.userOrigin.last_name
+                    lugar = event.location.name
+                    event.title = nombre + ' ' + apellido + '-' + lugar
                     s = Event.objects.filter(start__contains=event.start)
                     l = Event.objects.filter(location=event.location)
                     if s and l:
@@ -265,6 +268,28 @@ def calendar_consierge(request):
         consierge = Consierge.objects.get(rut=current.username)
         if consierge:
             return render(request, 'consierge/calendar_locations_consierge.html', {})
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def post_publication_consierge(request):
+    current = request.user
+    try:
+        consierge = Consierge.objects.get(rut=current.username)
+        if consierge:
+            if request.method == 'POST':
+                publication_form = PublicationForm(data=request.POST)
+                if publication_form.is_valid():
+                    publication = publication_form.save(commit=False)
+                    publication.publisher = current
+                    publication.save()
+                    return HttpResponseRedirect('/dashboard_concierge/')
+            else:
+                publication_form = PublicationForm()
+            return render(request, 'consierge/publish_consierge.html', {'publication_form': publication_form})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:
@@ -496,7 +521,6 @@ def delete_consierge(request, consierge_id):
         return render_to_response('login_error.html', {})
 
 
-
 @login_required
 def create_location(request):
     current = request.user
@@ -544,6 +568,28 @@ def delete_location(request, location_id):
             location = Location.objects.get(id=location_id)
             location.delete()
             return HttpResponseRedirect('/list_consierges/')
+        else:
+            render_to_response('login_error.html', {})
+    except ObjectDoesNotExist:
+        return render_to_response('login_error.html', {})
+
+
+@login_required
+def post_publication_owner(request):
+    current = request.user
+    try:
+        owner = Owner.objects.get(rut=current.username)
+        if owner:
+            if request.method == 'POST':
+                publication_form = PublicationForm(data=request.POST)
+                if publication_form.is_valid():
+                    publication = publication_form.save(commit=False)
+                    publication.publisher = current
+                    publication.save()
+                    return HttpResponseRedirect('/dashboard_owner/')
+            else:
+                publication_form = PublicationForm()
+            return render(request, 'owner/publication_owner.html', {'publication_form': publication_form})
         else:
             render_to_response('login_error.html', {})
     except ObjectDoesNotExist:

@@ -1,0 +1,34 @@
+{% extends 'consierge/base_concierge.html' %}
+{% load widget_tweaks %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="col-lg-8">
+
+
+        <!-- /.panel-heading -->
+
+        <form name="myForm" id="user_form" method="post" action="/publication_consierge/" enctype="multipart/form-data" class="form-horizontal" onsubmit="return validateForm()">
+        {% csrf_token %}
+                <div class="form-group">
+                <label>Titulo de la publicación</label>
+                {{ publication_form.title|add_class:"form-control"}}
+                {{ publication_form.title.errors }}
+                 </div>
+                <div class="form-group">
+                <label>Contenido</label>
+                {{ publication_form.message|add_class:"form-control"}}
+                {{ publication_form.message.errors }}
+                </div>
+                <div class="form-group">
+                <label>Tipo de publicación</label>
+                {{ publication_form.type|add_class:"form-control"}}
+                {{ publication_form.type.errors }}
+                </div>
+
+                <button type="submit" class="btn green">Registrar</button>
+         </form>
+
+
+</div>
+{% endblock %}
