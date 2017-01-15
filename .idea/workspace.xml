@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8afd11fb-1509-4357-a489-0da052629df1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smapp/templates/consierge/publish_consierge.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smapp/templates/owner/publication_owner.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/forms.py" afterPath="$PROJECT_DIR$/smapp/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/models.py" afterPath="$PROJECT_DIR$/smapp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/consierge/base_concierge.html" afterPath="$PROJECT_DIR$/smapp/templates/consierge/base_concierge.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/consierge/concierge_dashboard.html" afterPath="$PROJECT_DIR$/smapp/templates/consierge/concierge_dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/consierge/historical_record.html" afterPath="$PROJECT_DIR$/smapp/templates/consierge/historical_record.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/consierge/publications_wall_consierge.html" afterPath="$PROJECT_DIR$/smapp/templates/consierge/publications_wall_consierge.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/owner/base_owner.html" afterPath="$PROJECT_DIR$/smapp/templates/owner/base_owner.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/owner/owner_dashboard.html" afterPath="$PROJECT_DIR$/smapp/templates/owner/owner_dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/owner/publications_wall_owner.html" afterPath="$PROJECT_DIR$/smapp/templates/owner/publications_wall_owner.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/resident/index_dashboard.html" afterPath="$PROJECT_DIR$/smapp/templates/resident/index_dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/templates/resident/publications_wall.html" afterPath="$PROJECT_DIR$/smapp/templates/resident/publications_wall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/urls.py" afterPath="$PROJECT_DIR$/smapp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smapp/views.py" afterPath="$PROJECT_DIR$/smapp/views.py" />
     </list>
     <ignored path="smproject.iws" />
@@ -49,6 +39,20 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Sqlite (Xerial) - db.sqlite3" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="smapp_visit" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -58,16 +62,71 @@
     <favorites_list name="smproject" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.453958">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/smapp/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+                <state relative-caret-position="13">
+                  <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/smapp/forms.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="69" column="61" lean-forward="false" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/smapp/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="780">
+                  <caret line="178" column="15" lean-forward="false" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
+                  <folding>
+                    <element signature="e#0#55#0" expanded="true" />
+                    <element signature="e#437#477#0" expanded="false" />
+                    <element signature="e#513#1064#0" expanded="false" />
+                    <element signature="e#1120#2141#0" expanded="false" />
+                    <element signature="e#2189#2638#0" expanded="false" />
+                    <element signature="e#2692#3516#0" expanded="false" />
+                    <element signature="e#3571#4012#0" expanded="false" />
+                    <element signature="e#4059#4489#0" expanded="false" />
+                    <element signature="e#4541#4886#0" expanded="false" />
+                    <element signature="e#4918#5070#0" expanded="false" />
+                    <element signature="e#5120#6514#0" expanded="false" />
+                    <element signature="e#6563#6615#0" expanded="false" />
+                    <element signature="e#6652#7234#0" expanded="false" />
+                    <element signature="e#7291#7933#0" expanded="false" />
+                    <element signature="e#7985#8723#0" expanded="false" />
+                    <element signature="e#9273#9728#0" expanded="false" />
+                    <element signature="e#9784#10143#0" expanded="false" />
+                    <element signature="e#10207#11055#0" expanded="false" />
+                    <element signature="e#11088#11654#0" expanded="false" />
+                    <element signature="e#11707#12329#0" expanded="false" />
+                    <element signature="e#12379#13088#0" expanded="false" />
+                    <element signature="e#13149#13569#0" expanded="false" />
+                    <element signature="e#13621#13959#0" expanded="false" />
+                    <element signature="e#14020#14455#0" expanded="false" />
+                    <element signature="e#14508#15769#0" expanded="false" />
+                    <element signature="e#15821#16219#0" expanded="false" />
+                    <element signature="e#16285#16692#0" expanded="false" />
+                    <element signature="e#16746#18024#0" expanded="false" />
+                    <element signature="e#18076#18479#0" expanded="false" />
+                    <element signature="e#18547#18958#0" expanded="false" />
+                    <element signature="e#19011#19830#0" expanded="false" />
+                    <element signature="e#19881#20279#0" expanded="false" />
+                    <element signature="e#20345#20757#0" expanded="false" />
+                    <element signature="e#20817#21645#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -77,84 +136,52 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/smapp/views.py">
+          <file leaf-file-name="concierge_dashboard.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/concierge_dashboard.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2">
-                  <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#0#55#0" expanded="true" />
-                    <element signature="e#437#477#0" expanded="false" />
-                    <element signature="e#513#1064#0" expanded="false" />
-                    <element signature="e#1120#2140#0" expanded="false" />
-                    <element signature="e#2188#2636#0" expanded="false" />
-                    <element signature="e#2690#3516#0" expanded="false" />
-                    <element signature="e#3571#4014#0" expanded="false" />
-                    <element signature="e#4061#4493#0" expanded="false" />
-                    <element signature="e#4545#4892#0" expanded="false" />
-                    <element signature="e#4924#5076#0" expanded="false" />
-                    <element signature="e#5126#6522#0" expanded="false" />
-                    <element signature="e#6571#6623#0" expanded="false" />
-                    <element signature="e#6660#7242#0" expanded="false" />
-                    <element signature="e#7299#7943#0" expanded="false" />
-                    <element signature="e#8790#9222#0" expanded="false" />
-                    <element signature="e#9287#9744#0" expanded="false" />
-                    <element signature="e#9800#10161#0" expanded="false" />
-                    <element signature="e#10225#11075#0" expanded="false" />
-                    <element signature="e#11108#11674#0" expanded="false" />
-                    <element signature="e#11727#12351#0" expanded="false" />
-                    <element signature="e#12401#13112#0" expanded="false" />
-                    <element signature="e#13173#13595#0" expanded="false" />
-                    <element signature="e#13647#13987#0" expanded="false" />
-                    <element signature="e#14048#14485#0" expanded="false" />
-                    <element signature="e#14538#15850#0" expanded="false" />
-                    <element signature="e#15902#16302#0" expanded="false" />
-                    <element signature="e#16368#16777#0" expanded="false" />
-                    <element signature="e#16831#18161#0" expanded="false" />
-                    <element signature="e#18213#18618#0" expanded="false" />
-                    <element signature="e#18686#19099#0" expanded="false" />
-                    <element signature="e#19152#19973#0" expanded="false" />
-                    <element signature="e#20024#20424#0" expanded="false" />
-                    <element signature="e#20490#20904#0" expanded="false" />
-                    <element signature="e#20964#21794#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="historical_record.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/historical_record.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" column="92" lean-forward="false" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
+                <state relative-caret-position="75">
+                  <caret line="27" column="61" lean-forward="false" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="smapp_visit" pinned="false" current-in-tab="false">
-            <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_visit">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
+          <file leaf-file-name="smapp_resident" pinned="false" current-in-tab="false">
+            <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_resident">
               <provider editor-type-id="text-editor">
                 <state relative-caret-position="0">
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
+                </state>
+              </provider>
             </entry>
           </file>
-          <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/smapp/forms.py">
+          <file leaf-file-name="auth_user" pinned="false" current-in-tab="false">
+            <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/auth_user">
+              <provider editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="historical_record.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/historical_record.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="55" column="64" lean-forward="true" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
-                  <folding>
-                    <element signature="e#24#48#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="348">
+                  <caret line="33" column="66" lean-forward="false" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -168,8 +195,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -179,6 +206,7 @@
       <find>(Resident)</find>
       <find>Resident.ob</find>
       <find>visit</find>
+      <find>rut</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/smproject/static/dateform/src/Datepair.js" />
         <option value="$PROJECT_DIR$/smproject/static/dateform/lib/jquery.ptTimeSelect.css" />
         <option value="$PROJECT_DIR$/smapp/templates/register_event.html" />
         <option value="$PROJECT_DIR$/smapp/ejercicios.py" />
@@ -230,7 +257,6 @@
         <option value="$PROJECT_DIR$/smapp/templates/consierge/publish_consierge.html" />
         <option value="$PROJECT_DIR$/smapp/templates/consierge/base_concierge.html" />
         <option value="$PROJECT_DIR$/smapp/templates/consierge/publications_wall_consierge.html" />
-        <option value="$PROJECT_DIR$/smapp/templates/consierge/concierge_dashboard.html" />
         <option value="dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_publication" />
         <option value="$PROJECT_DIR$/smapp/templates/resident/index_dashboard.html" />
         <option value="$PROJECT_DIR$/smapp/templates/resident/publications_wall.html" />
@@ -239,10 +265,12 @@
         <option value="$PROJECT_DIR$/smapp/urls.py" />
         <option value="$PROJECT_DIR$/smapp/templates/owner/base_owner.html" />
         <option value="$PROJECT_DIR$/smapp/templates/owner/owner_dashboard.html" />
+        <option value="$PROJECT_DIR$/populate.py" />
         <option value="$PROJECT_DIR$/smapp/views.py" />
-        <option value="$PROJECT_DIR$/smapp/forms.py" />
         <option value="$PROJECT_DIR$/smapp/templates/consierge/historical_record.html" />
         <option value="$PROJECT_DIR$/smapp/models.py" />
+        <option value="$PROJECT_DIR$/smapp/templates/consierge/concierge_dashboard.html" />
+        <option value="$PROJECT_DIR$/smapp/forms.py" />
       </list>
     </option>
   </component>
@@ -253,10 +281,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-320" />
-    <option name="y" value="-1080" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -281,7 +307,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -294,7 +320,24 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/startbootstrap-sb-admin-2-gh-pages" />
@@ -608,17 +651,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-320" y="-1080" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13844515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21001616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32236207" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22044729" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50745475" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2197092" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35218093" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25772098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -668,87 +711,32 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/smapp/views.py</url>
-          <line>140</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_event">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_event">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_event">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_event">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_event">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_event">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -767,81 +755,74 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_resident">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_resident">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_resident">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/auth_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/auth_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_resident">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/register_visit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="95" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="95" />
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -853,18 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_consierge">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smapp/templates/owner/list_consierges.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -873,14 +842,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_location">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -902,13 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="33" column="99" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smapp/templates/resident/visit_record.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -954,38 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/auth_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_publication">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/concierge_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="86" column="135" lean-forward="false" selection-start-line="86" selection-start-column="135" selection-end-line="86" selection-end-column="135" />
           <folding />
         </state>
       </provider>
@@ -1072,14 +1002,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smapp/templates/resident/calendar_locations.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smapp/templates/resident/index_dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1088,100 +1010,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_resident">
+    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_apartment">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_consierge">
       <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_publication">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/login_concierge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populate.py" />
+    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_event">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smapp/templates/resident/calendar_locations.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smapp/forms.py">
+    <entry file="file://$PROJECT_DIR$/smapp/templates/resident/visit_record.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="55" column="64" lean-forward="true" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
-          <folding>
-            <element signature="e#24#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_visit">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/register_visit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/historical_record.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="33" column="66" lean-forward="false" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+        <state relative-caret-position="780">
+          <caret line="178" column="15" lean-forward="false" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
             <element signature="e#437#477#0" expanded="false" />
             <element signature="e#513#1064#0" expanded="false" />
-            <element signature="e#1120#2140#0" expanded="false" />
-            <element signature="e#2188#2636#0" expanded="false" />
-            <element signature="e#2690#3516#0" expanded="false" />
-            <element signature="e#3571#4014#0" expanded="false" />
-            <element signature="e#4061#4493#0" expanded="false" />
-            <element signature="e#4545#4892#0" expanded="false" />
-            <element signature="e#4924#5076#0" expanded="false" />
-            <element signature="e#5126#6522#0" expanded="false" />
-            <element signature="e#6571#6623#0" expanded="false" />
-            <element signature="e#6660#7242#0" expanded="false" />
-            <element signature="e#7299#7943#0" expanded="false" />
-            <element signature="e#8790#9222#0" expanded="false" />
-            <element signature="e#9287#9744#0" expanded="false" />
-            <element signature="e#9800#10161#0" expanded="false" />
-            <element signature="e#10225#11075#0" expanded="false" />
-            <element signature="e#11108#11674#0" expanded="false" />
-            <element signature="e#11727#12351#0" expanded="false" />
-            <element signature="e#12401#13112#0" expanded="false" />
-            <element signature="e#13173#13595#0" expanded="false" />
-            <element signature="e#13647#13987#0" expanded="false" />
-            <element signature="e#14048#14485#0" expanded="false" />
-            <element signature="e#14538#15850#0" expanded="false" />
-            <element signature="e#15902#16302#0" expanded="false" />
-            <element signature="e#16368#16777#0" expanded="false" />
-            <element signature="e#16831#18161#0" expanded="false" />
-            <element signature="e#18213#18618#0" expanded="false" />
-            <element signature="e#18686#19099#0" expanded="false" />
-            <element signature="e#19152#19973#0" expanded="false" />
-            <element signature="e#20024#20424#0" expanded="false" />
-            <element signature="e#20490#20904#0" expanded="false" />
-            <element signature="e#20964#21794#0" expanded="false" />
+            <element signature="e#1120#2141#0" expanded="false" />
+            <element signature="e#2189#2638#0" expanded="false" />
+            <element signature="e#2692#3516#0" expanded="false" />
+            <element signature="e#3571#4012#0" expanded="false" />
+            <element signature="e#4059#4489#0" expanded="false" />
+            <element signature="e#4541#4886#0" expanded="false" />
+            <element signature="e#4918#5070#0" expanded="false" />
+            <element signature="e#5120#6514#0" expanded="false" />
+            <element signature="e#6563#6615#0" expanded="false" />
+            <element signature="e#6652#7234#0" expanded="false" />
+            <element signature="e#7291#7933#0" expanded="false" />
+            <element signature="e#7985#8723#0" expanded="false" />
+            <element signature="e#9273#9728#0" expanded="false" />
+            <element signature="e#9784#10143#0" expanded="false" />
+            <element signature="e#10207#11055#0" expanded="false" />
+            <element signature="e#11088#11654#0" expanded="false" />
+            <element signature="e#11707#12329#0" expanded="false" />
+            <element signature="e#12379#13088#0" expanded="false" />
+            <element signature="e#13149#13569#0" expanded="false" />
+            <element signature="e#13621#13959#0" expanded="false" />
+            <element signature="e#14020#14455#0" expanded="false" />
+            <element signature="e#14508#15769#0" expanded="false" />
+            <element signature="e#15821#16219#0" expanded="false" />
+            <element signature="e#16285#16692#0" expanded="false" />
+            <element signature="e#16746#18024#0" expanded="false" />
+            <element signature="e#18076#18479#0" expanded="false" />
+            <element signature="e#18547#18958#0" expanded="false" />
+            <element signature="e#19011#19830#0" expanded="false" />
+            <element signature="e#19881#20279#0" expanded="false" />
+            <element signature="e#20345#20757#0" expanded="false" />
+            <element signature="e#20817#21645#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/historical_record.html">
+    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_visit">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/smapp_resident">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/fdb98f55/6920f043-6694-430c-98cd-9a3803ca5a1f/auth_user">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smapp/templates/consierge/concierge_dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="92" lean-forward="false" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
+        <state relative-caret-position="75">
+          <caret line="27" column="61" lean-forward="false" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+        <state relative-caret-position="13">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smapp/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="69" column="61" lean-forward="false" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>

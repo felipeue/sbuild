@@ -30,8 +30,8 @@
                                             <td>{{ record.rut }}</td>
                                             <td>{{ record.date }}</td>
                                             <td>{{ record.resident.first_name }} {{ record.resident.last_name }}</td>
-                                            <td>{{ record.resident.resident.apartment.floor }}</td>
-                                            <td>{{ record.resident.resident.apartment.number }}</td>
+                                            <td>{{ record.resident.apartment.floor }}</td>
+                                            <td>{{ record.resident.apartment.number }}</td>
                                             {% if record.received == True %}
                                                 <td><i class="fa fa-check fa-fw"></i>Si</td>
                                             {% else %}

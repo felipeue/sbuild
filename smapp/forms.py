@@ -53,7 +53,7 @@ def valida(rut):
 class TakeNameField(chosenforms.ChosenModelChoiceField):
     def label_from_instance(self, obj):
         # return whatever text you want
-        return 'Nombre: ' + obj.first_name + ' ' + obj.last_name
+        return 'Nombre: ' + obj.userOrigin.first_name + ' ' + obj.userOrigin.last_name
 
 
 class VisitForm(forms.ModelForm):
@@ -67,7 +67,7 @@ class VisitForm(forms.ModelForm):
                           max_length=12,
                           validators=[valida]
                           )
-    resident = TakeNameField(queryset=User.objects.prefetch_related("resident__userOrigin").filter(resident__isnull=False).all())
+    resident = TakeNameField(queryset=Resident.objects.all())
     note = forms.CharField(label='Nota',
                            widget=forms.Textarea,
                            min_length=10,

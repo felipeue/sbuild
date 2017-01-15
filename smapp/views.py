@@ -34,7 +34,7 @@ def login_resident(request):
 def dashboard_resident(request):
     current = request.user
     try:
-        resident = Resident.objects.get(rut=current.username)
+        resident = Resident.objects.get(userOrigin=current.id)
         if resident:
             r = Resident.objects.filter(userOrigin=current)
             publications = Publication.objects.order_by('-id')[:5]
@@ -59,7 +59,7 @@ def dashboard_resident(request):
 def list_visit(request):
     current = request.user
     try:
-        resident = Resident.objects.get(rut=current.username)
+        resident = Resident.objects.get(userOrigin=current.id)
         if resident:
             records = Visit.objects.filter(resident=current).order_by('id').all()
             return render(request, 'resident/visit_record.html', {'records': records})
@@ -73,7 +73,7 @@ def list_visit(request):
 def post_publication(request):
     current = request.user
     try:
-        resident = Resident.objects.get(rut=current.username)
+        resident = Resident.objects.get(userOrigin=current)
         if resident:
             if request.method == 'POST':
                 publication_form = PublicationForm(data=request.POST)
@@ -95,7 +95,7 @@ def post_publication(request):
 def publications_wall(request):
     current = request.user
     try:
-        resident = Resident.objects.get(rut=current.username)
+        resident = Resident.objects.get(userOrigin=current)
         if resident:
             publications = Publication.objects.order_by('-id').all()
             return render(request, 'resident/publications_wall.html', {'publications': publications})
@@ -109,7 +109,7 @@ def publications_wall(request):
 def rent_list(request):
     current = request.user
     try:
-        resident = Resident.objects.get(rut=current.username)
+        resident = Resident.objects.get(userOrigin=current)
         if resident:
             rents = Rent.objects.filter(resident=resident).order_by('-id').all()
             return render(request, 'resident/pay_list.html', {'rents': rents})
@@ -123,7 +123,7 @@ def rent_list(request):
 def event_calendar(request):
     current = request.user
     try:
-        resident = Resident.objects.get(rut=current.username)
+        resident = Resident.objects.get(userOrigin=current)
         if resident:
             return render(request, 'resident/calendar_locations.html', {})
         else:
@@ -141,7 +141,7 @@ def all_events(request):
 def create_event(request):
     current = request.user
     try:
-        resident = Resident.objects.get(rut=current.username)
+        resident = Resident.objects.get(userOrigin=current)
         if resident:
             if request.method == 'POST':
                 event_form = EventForm(data=request.POST)
@@ -197,8 +197,8 @@ def login_consierge(request):
 def dashboard_consierge(request):
     current = request.user
     try:
-        concierge = Consierge.objects.get(rut=current.username)
-        if concierge:
+        consierge = Consierge.objects.get(userOrigin=current)
+        if consierge:
             records = Visit.objects.order_by('-id')[:5]
             publications = Publication.objects.order_by('-id')[:5]
             return render(request, 'consierge/concierge_dashboard.html',
@@ -216,7 +216,7 @@ def dashboard_consierge(request):
 def register_visit(request):
     current = request.user
     try:
-        concierge = Consierge.objects.get(rut=current.username)
+        concierge = Consierge.objects.get(userOrigin=current)
         if concierge:
             if request.method == 'POST':
                 visit_form = VisitForm(data=request.POST)
@@ -237,7 +237,7 @@ def register_visit(request):
 def historical_record(request):
     current = request.user
     try:
-        concierge = Consierge.objects.get(rut=current.username)
+        concierge = Consierge.objects.get(userOrigin=current)
         if concierge:
             records = Visit.objects.order_by('id').all()
             return render(request, 'consierge/historical_record.html', {'records': records})
@@ -251,7 +251,7 @@ def historical_record(request):
 def publications_wall_consierge(request):
     current = request.user
     try:
-        consierge = Consierge.objects.get(rut=current.username)
+        consierge = Consierge.objects.get(userOrigin=current)
         if consierge:
             publications = Publication.objects.order_by('-id').all()
             return render(request, 'consierge/publications_wall_consierge.html', {'publications': publications})
@@ -265,7 +265,7 @@ def publications_wall_consierge(request):
 def calendar_consierge(request):
     current = request.user
     try:
-        consierge = Consierge.objects.get(rut=current.username)
+        consierge = Consierge.objects.get(userOrigin=current)
         if consierge:
             return render(request, 'consierge/calendar_locations_consierge.html', {})
         else:
@@ -278,7 +278,7 @@ def calendar_consierge(request):
 def post_publication_consierge(request):
     current = request.user
     try:
-        consierge = Consierge.objects.get(rut=current.username)
+        consierge = Consierge.objects.get(userOrigin=current)
         if consierge:
             if request.method == 'POST':
                 publication_form = PublicationForm(data=request.POST)
@@ -317,7 +317,7 @@ def login_owner(request):
 def dashboard_owner(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             records = Visit.objects.order_by('-id')[:5]
             publications = Publication.objects.order_by('-id')[:5]
@@ -335,7 +335,7 @@ def dashboard_owner(request):
 def register_rent(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             if request.method == 'POST':
                 rent_form = RentForm(data=request.POST)
@@ -356,7 +356,7 @@ def register_rent(request):
 def historical_record_owner(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             records = Visit.objects.order_by('id').all()
             return render(request, 'owner/historical_record_owner.html', {'records': records})
@@ -370,7 +370,7 @@ def historical_record_owner(request):
 def calendar_owner(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             return render(request, 'owner/calendar_location_owner.html', {})
         else:
@@ -383,7 +383,7 @@ def calendar_owner(request):
 def publications_wall_owner(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             publications = Publication.objects.order_by('-id').all()
             return render(request, 'owner/publications_wall_owner.html', {'publications': publications})
@@ -397,7 +397,7 @@ def publications_wall_owner(request):
 def create_resident(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             if request.method == 'POST':
                 user_form = UserForm(data=request.POST)
@@ -408,7 +408,6 @@ def create_resident(request):
                     user.save()
                     resident = resident_form.save(commit=False)
                     resident.userOrigin = user
-                    resident.rut = user.username
                     resident.save()
                     return HttpResponseRedirect('/dashboard_owner/')
                 else:
@@ -432,7 +431,7 @@ def create_resident(request):
 def list_residents(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             residents = Resident.objects.all()
             return render(request, 'owner/list_residents.html', {'residents': residents})
@@ -446,7 +445,7 @@ def list_residents(request):
 def delete_resident(request, resident_id):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             resident = User.objects.get(id=resident_id)
             resident.delete()
@@ -461,7 +460,7 @@ def delete_resident(request, resident_id):
 def create_consierge(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             if request.method == 'POST':
                 user_form = UserForm(data=request.POST)
@@ -472,7 +471,6 @@ def create_consierge(request):
                     user.save()
                     consierge = consierge_form.save(commit=False)
                     consierge.userOrigin = user
-                    consierge.rut = user.username
                     consierge.save()
                     return HttpResponseRedirect('/dashboard_owner/')
                 else:
@@ -496,7 +494,7 @@ def create_consierge(request):
 def list_consierge(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             consierges = Consierge.objects.all()
             return render(request, 'owner/list_consierges.html', {'consierges': consierges})
@@ -510,7 +508,7 @@ def list_consierge(request):
 def delete_consierge(request, consierge_id):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             consierge = User.objects.get(id=consierge_id)
             consierge.delete()
@@ -525,7 +523,7 @@ def delete_consierge(request, consierge_id):
 def create_location(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             if request.method == 'POST':
                 location_form = LocationForm(data=request.POST)
@@ -549,7 +547,7 @@ def create_location(request):
 def list_location(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             locations = Location.objects.all()
             return render(request, 'owner/list_locations.html', {'locations': locations})
@@ -563,7 +561,7 @@ def list_location(request):
 def delete_location(request, location_id):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             location = Location.objects.get(id=location_id)
             location.delete()
@@ -578,7 +576,7 @@ def delete_location(request, location_id):
 def post_publication_owner(request):
     current = request.user
     try:
-        owner = Owner.objects.get(rut=current.username)
+        owner = Owner.objects.get(userOrigin=current)
         if owner:
             if request.method == 'POST':
                 publication_form = PublicationForm(data=request.POST)

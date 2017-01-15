@@ -25,7 +25,7 @@
                     {% for record in records%}
                         <tr>
                             <td>{{ record.name }}</td>
-                            <td>{{ record.resident.userOrigin.first_name }} {{ record.resident.userOrigin.last_name }}</td>
+                            <td>{{ record.resident.userOrigin.first_name }} {{ record.resident.last_name }}</td>
                             <td>{{ record.rut }}</td>
                             <td>{{ record.date }}</td>
                             {% if record.received == True %}
