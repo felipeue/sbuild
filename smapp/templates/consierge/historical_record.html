@@ -21,6 +21,7 @@
                                         <th>Numero</th>
                                         <th>Atendido</th>
                                         <th>Comentario</th>
+                                        <th>Conserje</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -29,15 +30,16 @@
                                             <td>{{ record.name }}</td>
                                             <td>{{ record.rut }}</td>
                                             <td>{{ record.date }}</td>
-                                            <td>{{ record.resident.first_name }} {{ record.resident.last_name }}</td>
-                                            <td>{{ record.resident.apartment.floor }}</td>
-                                            <td>{{ record.resident.apartment.number }}</td>
+                                            <td>{{ record.resident.userOrigin.first_name }} {{ record.resident.userOrigin.last_name }}</td>
+                                            <td>{% for apartment in record.resident.apartment.all %}{{ apartment.number }}{% endfor %}</td>
+                                            <td>{% for apartment in record.resident.apartment.all %}{{ apartment.floor }}{% endfor %}</td>
                                             {% if record.received == True %}
                                                 <td><i class="fa fa-check fa-fw"></i>Si</td>
                                             {% else %}
                                                 <td><i class="fa fa-times  fa-fw"></i>No</td>
                                             {% endif %}
                                             <td>{{ record.note }}</td>
+                                            <td>{{ record.consierge.userOrigin.first_name }} {{ record.consierge.userOrigin.last_name }}</td>
                                         </tr>
                                     {% endfor %}
 

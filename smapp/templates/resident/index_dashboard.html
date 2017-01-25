@@ -105,8 +105,8 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <strong><p>{{ resident.userOrigin.first_name }} {{ resident.userOrigin.last_name }}</p></strong>
-                <strong><p>Departamento: {{ resident.apartment.number }}</p></strong>
-                <strong><p>Piso: {{ resident.apartment.floor }}</p></strong>
+                <strong><p>Departamento: {% for apartment in resident.apartment.all %}{{ apartment.number }}{% endfor %}</p></strong>
+                <strong><p>Piso: {% for apartment in resident.apartment.all %}{{ apartment.floor }}{% endfor %}</p></strong>
             </div>
             <div class="panel-footer">
             </div>

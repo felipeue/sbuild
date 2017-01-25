@@ -17,7 +17,7 @@ class Building(models.Model):
     name = models.CharField(max_length=40)
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    owner = models.ForeignKey(User, related_name='building')
+    owner = models.ForeignKey(Owner, related_name='building')
 
     def __unicode__(self):
         return str(self.id)
@@ -57,6 +57,7 @@ class Visit(models.Model):
     resident = models.ForeignKey(Resident, related_name='visit')
     note = models.TextField(max_length=200)
     received = models.BooleanField(default=True)
+    consierge = models.ForeignKey(Consierge)
 
     def __unicode__(self):
         return str(self.id)

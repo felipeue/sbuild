@@ -38,7 +38,7 @@ def dashboard_resident(request):
         if resident:
             r = Resident.objects.filter(userOrigin=current)
             publications = Publication.objects.order_by('-id')[:5]
-            records = Visit.objects.filter(resident=current).order_by('-id')[:5]
+            records = Visit.objects.filter(resident=r).order_by('-id')[:5]
             reservations = Event.objects.order_by('-id')[:6]
             payments = Rent.objects.filter(resident=r).order_by('id')[:5]
             return render(request, 'resident/index_dashboard.html',
@@ -61,7 +61,7 @@ def list_visit(request):
     try:
         resident = Resident.objects.get(userOrigin=current.id)
         if resident:
-            records = Visit.objects.filter(resident=current).order_by('id').all()
+            records = Visit.objects.filter(resident=resident).order_by('id').all()
             return render(request, 'resident/visit_record.html', {'records': records})
         else:
             return render_to_response('login_error.html', {})

@@ -18,7 +18,7 @@
                                         <th>Fecha | Hora</th>
                                         <th>Atendido</th>
                                         <th>Comentario</th>
-
+                                        <th>Conserje</th>
 
                                     </tr>
                                 </thead>
@@ -34,6 +34,7 @@
                                                 <td><i class="fa fa-times  fa-fw"></i>No</td>
                                             {% endif %}
                                             <td>{{ record.note }}</td>
+                                            <td>{{ record.consierge.userOrigin.first_name }} {{ record.consierge.userOrigin.last_name }} </td>
                                         </tr>
                                     {% endfor %}
 
